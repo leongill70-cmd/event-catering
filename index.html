@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>(Firmenname ergänzen) – Getränke-Catering Berlin</title>
+  <meta name="description" content="Getränke-Catering, Bierwagen, Ausschank, Personal und Wochenendveranstaltungsservice für Events in Berlin und Umgebung." />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ebe3d9;
+      color: #2b2118;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .site-shell {
+      background: #f8f3ed;
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(90,63,37,0.10);
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(248,243,237,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e7ddd1;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 24px;
+    }
+
+    .brand-title {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .brand-subtitle {
+      font-size: 14px;
+      color: #7a6551;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 12px 20px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #b58d67;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-light {
+      background: white;
+      color: #3b2a1f;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+    }
+
+    .section {
+      padding: 28px 24px;
+    }
+
+    .hero-grid,
+    .two-col {
+      display: grid;
+      gap: 24px;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .hero-main {
+      min-height: 520px;
+      border-radius: 32px;
+      padding: 40px;
+      color: white;
+      display: flex;
+      align-items: end;
+      background:
+        linear-gradient(135deg, rgba(55,39,25,0.75), rgba(181,141,103,0.25)),
+        url('https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.10);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: 52px;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 38px;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .card,
+    .soft-card,
+    .dark-card {
+      border-radius: 32px;
+      padding: 28px;
+    }
+
+    .card {
+      background: white;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .soft-card {
+      background: #f7f1ea;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .dark-card {
+      background: #2f241a;
+      color: white;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .stat-card {
+      background: #d4b596;
+      color: white;
+    }
+
+    .small-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9a8169;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .dark-card .small-label,
+    .stat-card .small-label {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .stat-number {
+      font-size: 42px;
+      font-weight: 700;
+    }
+
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mini-card {
+      background: #fcfaf7;
+      border: 1px solid #ede2d5;
+      border-radius: 24px;
+      padding: 20px;
+    }
+
+    .tag-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      background: white;
+      border-radius: 20px;
+      padding: 16px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .download-box {
+      border: 1px dashed #d7c6b5;
+      border-radius: 24px;
+      padding: 20px;
+      margin-top: 22px;
+      color: #6d5a48;
+      background: #fffdfa;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .package-card {
+      background: #fcfaf7;
+      border: 1px solid #eadfd2;
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .package-top {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9a8169;
+      font-weight: 700;
+    }
+
+    .price {
+      font-size: 38px;
+      color: #b58d67;
+      font-weight: 700;
+      margin: 16px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 14px 0 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid #e6dace;
+      font: inherit;
+      background: white;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+      margin-top: 14px;
+    }
+
+    .consent {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 18px;
+      background: #f7f1ea;
+      color: #5f4c3b;
+      font-size: 14px;
+    }
+
+    .gallery-placeholder {
+      height: 220px;
+      background: #f7f1ea;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7a6551;
+      font-size: 14px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .footer {
+      border-top: 1px solid #e7ddd1;
+      padding: 28px 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      font-size: 14px;
+      color: #6d5a48;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .two-col,
+      .contact-grid,
+      .packages,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-main {
+        min-height: 420px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        display: none;
+      }
+
+      .header-inner,
+      .form-grid,
+      .hero-grid,
+      .two-col,
+      .contact-grid,
+      .packages,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .footer-grid,
+      .tag-row,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .header-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-main {
+        padding: 28px;
+        min-height: 360px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .section {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="site-shell">
+      <header class="header">
+        <div class="header-inner">
+          <div>
+            <div class="brand-title">(Firmenname ergänzen)</div>
+            <div class="brand-subtitle">Weekend Event & Getränkeservice aus Berlin</div>
+          </div>
+          <nav class="nav">
+            <a href="#leistungen">Leistungen</a>
+            <a href="#events">Events</a>
+            <a href="#pakete">Pakete</a>
+            <a href="#bier">Craft Bier</a>
+            <a href="#kontakt">Kontakt</a>
+          </nav>
+          <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="section hero-grid">
+          <div class="hero-main">
+            <div>
+              <div class="badge">Wochenendveranstaltungsservice · Berlin</div>
+              <h1>Getränke-Catering mit Stil für Events, Feiern und Großveranstaltungen.</h1>
+              <p>
+                Wir bringen Erfahrung aus großen Berliner und überregionalen Veranstaltungen mit und bauen jetzt unseren eigenen Service auf: jung, schnell, professionell und zuverlässig. Von Hochzeit bis Stadtfest – mit Getränken, Bierwagen, Personal, Kühlung, Auf- und Abbau.
+              </p>
+              <div class="hero-buttons">
+                <a class="btn btn-light" href="#kontakt">Jetzt anfragen</a>
+                <a class="btn btn-outline" href="#pakete">Pakete ansehen</a>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; gap:24px;">
+            <div class="dark-card stat-card">
+              <div class="small-label">Unser Anspruch</div>
+              <div class="stats">
+                <div>
+                  <div class="stat-number">10+</div>
+                  <div>Jahre Event-Erfahrung im Hintergrund</div>
+                </div>
+                <div>
+                  <div class="stat-number">6</div>
+                  <div>Köpfiges junges Team</div>
+                </div>
+                <div>
+                  <div class="stat-number">1.000</div>
+                  <div>Gäste können wir je nach Event abdecken</div>
+                </div>
+                <div>
+                  <div class="stat-number">Fr–So</div>
+                  <div>Spezialisiert auf Wochenend-Events</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="small-label">Warum wir das machen</div>
+              <h3>Jung, erfahren und bereit für den eigenen Standard.</h3>
+              <p>
+                Nach Jahren auf großen Veranstaltungen und in der Zusammenarbeit mit etablierten Eventfirmen bauen wir jetzt unseren eigenen Getränkeservice auf – mit Blick für Qualität, saubere Abläufe und ehrliche Kommunikation.
+              </p>
+              <div class="download-box">
+                Inhaberschaft laut Platzhalter: <strong>Leon Gill</strong> & <strong>Josi Eilenberger</strong><br>
+                Veranstaltungsorganisation & individuelle Angebotsanpassungen über Josi Eilenberger.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="leistungen" class="section">
+          <div class="card">
+            <div class="small-label">Leistungen</div>
+            <h2>Alles rund um Getränke, Ausschank und Eventservice.</h2>
+            <p>
+              Ob kleine Privatfeier oder großes Stadtfest: Wir liefern nicht nur Getränke, sondern das komplette Ausschank- und Logistikkonzept für euer Wochenendevent.
+            </p>
+
+            <div class="grid-4" style="margin-top:24px;">
+              <div class="mini-card">Getränke-Catering für Hochzeiten, Firmenfeiern, Hauspartys und Stadtfeste</div>
+              <div class="mini-card">Bier, Wein, Softdrinks, Schorlen, Säfte, Shots und Longdrinks</div>
+              <div class="mini-card">Ausschließlich Original Coca-Cola Produkte</div>
+              <div class="mini-card">Fassbier und auf Wunsch eigenes Craft-Bier aus Berlin</div>
+              <div class="mini-card">Lieferung, Kühlung, Gläser, Personal, Auf- und Abbau</div>
+              <div class="mini-card">Bierwagen-Lösungen für Events und große Veranstaltungsflächen</div>
+              <div class="mini-card">Wochenendveranstaltungsservice – spezialisiert auf Freitag bis Sonntag</div>
+              <div class="mini-card">Optional Musik- und Veranstaltungsausstattung</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="events" class="section two-col">
+          <div class="soft-card">
+            <div class="small-label">Bisherige Event-Erfahrung</div>
+            <h2>Diese Eventwelten kennen wir bereits.</h2>
+            <p>
+              Eigene Veranstaltungen unter eigener Marke folgen – aber Erfahrung aus dem echten Eventbetrieb ist schon da.
+            </p>
+            <div class="grid-2" style="margin-top:22px;">
+              <div class="mini-card">Fanmeile 17. Juni, Berlin</div>
+              <div class="mini-card">Bunter Hering Stadtfest, Frankfurt</div>
+              <div class="mini-card">Botanische Nacht, Botanischer Garten Berlin</div>
+              <div class="mini-card">Biermeile Karlshorst</div>
+              <div class="mini-card">Karneval der Kulturen, Berlin</div>
+              <div class="mini-card">Britzer Garten</div>
+              <div class="mini-card">Alexanderplatz Wochenmärkte & Weihnachtsmärkte</div>
+              <div class="mini-card">Glühweinstand am Westin Grand Berlin</div>
+            </div>
+          </div>
+
+          <div class="soft-card">
+            <div class="gallery-placeholder">Platzhalter für späteres Eventbild / Teamfoto</div>
+            <h3 style="margin-top:22px;">Modern, hell und vertrauenswürdig.</h3>
+            <p>
+              Das Design ist bewusst in einer hellen, eleganten Richtung aufgebaut: Beige, Weiß und warme Naturtöne vermitteln Professionalität, Ruhe und einen hochwertigen Auftritt.
+            </p>
+            <div class="tag-row">
+              <div class="tag">Modern</div>
+              <div class="tag">Elegant</div>
+              <div class="tag">Professionell</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="getraenke" class="section">
+          <div class="card">
+            <div class="small-label">Getränkeauswahl</div>
+            <h2>Von Softdrinks bis Longdrinks.</h2>
+            <p>
+              Wir arbeiten mit einer breiten Auswahl an Getränken und stimmen die Zusammenstellung auf Gästezahl, Eventtyp und Budget ab.
+            </p>
+
+            <div class="grid-3" style="margin-top:24px;">
+              <div class="mini-card">Cola, Fanta, Sprite, Wasser, Apfelschorle, Säfte</div>
+              <div class="mini-card">Bier, Radler, Fassbier</div>
+              <div class="mini-card">Rotwein, Weißwein, Rosé</div>
+              <div class="mini-card">Vodka-, Rum- und Whiskey-Mixgetränke</div>
+              <div class="mini-card">Shots und saisonale Getränke</div>
+              <div class="mini-card">Craft-Bier aus Berlin auf Anfrage</div>
+            </div>
+
+            <div class="download-box">
+              <strong>Download-Bereich Platzhalter:</strong> Hier kann später eine Getränkekarte, Preisliste oder PDF-Datei eingebunden werden.
+            </div>
+          </div>
+        </section>
+
+        <section id="bier" class="section two-col">
+          <div class="dark-card">
+            <div class="small-label">Craft Bier</div>
+            <h2>Eigenes Bier als besonderes Highlight.</h2>
+            <p>
+              Für ausgewählte Events bieten wir zusätzlich eigenes Craft-Bier an. Perfekt für Firmenfeiern, Hochzeiten, Sommerfeste oder Markenauftritte.
+            </p>
+            <div class="download-box" style="background: rgba(255,255,255,0.1); border:none; color:white;">
+              Platzhaltertext: <strong>(Name eures Biers ergänzen)</strong><br>
+              Herkunft: Berlin · Stil: (ergänzen) · Verfügbarkeit: auf Anfrage
+            </div>
+          </div>
+
+          <div class="soft-card">
+            <h3>Auch mit Bierwagen möglich</h3>
+            <p>
+              Für Feste mit größerem Durchlauf können wir Ausschanklösungen mit Bierwagen oder passender Barstruktur mit einplanen.
+            </p>
+            <ul>
+              <li>Fassbier-Ausschank</li>
+              <li>Gläser, Kühlung und Logistik</li>
+              <li>Personal für schnellen Ausschank</li>
+              <li>Aufbau und Abbau durch unser Team</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="pakete" class="section">
+          <div class="card">
+            <div class="small-label">Preise & Pakete</div>
+            <h2>Sechs Startpakete als klare Orientierung.</h2>
+            <p>
+              Die Preise dienen als Richtwerte für Berlin und Wochenendveranstaltungen. Individuelle Anpassungen sind jederzeit möglich.
+            </p>
+
+            <div class="packages">
+              <div class="package-card">
+                <div class="package-top">bis 50 Gäste</div>
+                <h3>Paket 01 – Weekend Start</h3>
+                <div class="price">ab 690 €</div>
+                <p>Ideal für Geburtstage, Gartenfeiern und kleine Privatveranstaltungen.</p>
+                <ul>
+                  <li>Softdrinks & Wasser</li>
+                  <li>Lieferung in Berlin</li>
+                  <li>Auf- und Abbau</li>
+                  <li>2 Servicekräfte</li>
+                  <li>ca. 4 Stunden Ausschank</li>
+                </ul>
+              </div>
+
+              <div class="package-card">
+                <div class="package-top">bis 100 Gäste</div>
+                <h3>Paket 02 – Private Party</h3>
+                <div class="price">ab 1.190 €</div>
+                <p>Für größere Hauspartys, Geburtstage und lockere Feiern mit gemischter Getränkeauswahl.</p>
+                <ul>
+                  <li>Softdrinks, Bier & Schorlen</li>
+                  <li>Kühlung & Gläser</li>
+                  <li>Auf- und Abbau</li>
+                  <li>3 Servicekräfte</li>
+                  <li>ca. 5 Stunden Service</li>
+                </ul>
+              </div>
+
+              <div class="package-card">
+                <div class="package-top">bis 150 Gäste</div>
+                <h3>Paket 03 – Wedding Classic</h3>
+                <div class="price">ab 1.690 €</div>
+                <p>Beliebt für Hochzeiten und stilvolle Familienfeiern mit abgestimmtem Getränkekonzept.</p>
+                <ul>
+                  <li>Sektempfang optional</li>
+                  <li>Bier, Wein, Softdrinks</li>
+                  <li>Kühlung & Gläser</li>
+                  <li>4 Servicekräfte</li>
+                  <li>ca. 6 Stunden Service</li>
+                </ul>
+              </div>
+
+              <div class="package-card">
+                <div class="package-top">bis 250 Gäste</div>
+                <h3>Paket 04 – Business Event</h3>
+                <div class="price">ab 2.790 €</div>
+                <p>Für Firmenfeiern, Sommerfeste und Business-Events mit professionellem Setup.</p>
+                <ul>
+                  <li>Softdrinks, Bier, Wein, Longdrinks</li>
+                  <li>Bar-Setup</li>
+                  <li>Lieferung, Aufbau, Abbau</li>
+                  <li>5 Servicekräfte</li>
+                  <li>ca. 7 Stunden Service</li>
+                </ul>
+              </div>
+
+              <div class="package-card">
+                <div class="package-top">bis 400 Gäste</div>
+                <h3>Paket 05 – Bierwagen Event</h3>
+                <div class="price">ab 4.490 €</div>
+                <p>Für Stadtfeste, Vereinsfeste und große Veranstaltungen mit Bierwagen und starkem Durchlauf.</p>
+                <ul>
+                  <li>Bierwagen / Ausschanklösung</li>
+                  <li>Fassbier & Softdrinks</li>
+                  <li>Kühlung, Gläser, Logistik</li>
+                  <li>6 Servicekräfte</li>
+                  <li>ca. 8 Stunden Service</li>
+                </ul>
+              </div>
+
+              <div class="package-card">
+                <div class="package-top">400–1.000 Gäste</div>
+                <h3>Paket 06 – Large Scale Event</h3>
+                <div class="price">auf Anfrage</div>
+                <p>Für Großveranstaltungen mit individuellem Personal-, Logistik- und Getränkekonzept.</p>
+                <ul>
+                  <li>Individuelle Kalkulation</li>
+                  <li>Mehrere Stationen möglich</li>
+                  <li>Personal & Logistikplanung</li>
+                  <li>Bierwagen / Bars / Musik</li>
+                  <li>Angebot nach Eventprofil</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="download-box">
+              <strong>Wichtiger Hinweis:</strong> Alle Paketpreise sind unverbindliche Startpreise. Finale Angebote hängen von Gästezahl, Ausschankdauer, Getränkemenge, Logistik, Anfahrt, Mietkosten, Bierwagen, Kühlung, Gläsern, Musiktechnik und gewünschtem Personalumfang ab.
+            </div>
+          </div>
+        </section>
+
+        <section id="ueber-uns" class="section two-col">
+          <div class="soft-card">
+            <div class="small-label">Über uns</div>
+            <h2>Ein junges Team mit echter Veranstaltungserfahrung.</h2>
+            <p>
+              Wir kennen die Dynamik hinter erfolgreichen Veranstaltungen aus jahrelanger Praxis. Unser Anspruch ist nicht nur Getränke zu liefern, sondern Abläufe mitzudenken, sauber zu arbeiten und Veranstaltern das Leben leichter zu machen.
+            </p>
+            <p>
+              Josi Eilenberger bringt zusätzlich fachliche Erfahrung als Veranstaltungskauffrau mit – ausgebildet im Steigenberger Hotel am Kanzleramt.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="small-label">Was euch erwartet</div>
+            <div class="grid-2">
+              <div class="mini-card">Schnelle Kommunikation</div>
+              <div class="mini-card">Saubere Planung</div>
+              <div class="mini-card">Flexible Angebote</div>
+              <div class="mini-card">Freundliches Personal</div>
+              <div class="mini-card">Professioneller Aufbau</div>
+              <div class="mini-card">Verlässlicher Wochenendservice</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="kontakt" class="section">
+          <div class="contact-grid">
+            <div class="dark-card">
+              <div class="small-label">Kontakt</div>
+              <h2>Anfrage senden und Event gemeinsam planen.</h2>
+              <p>
+                Ihr plant eine Veranstaltung in Berlin oder Umgebung? Dann schickt uns die wichtigsten Infos direkt über das Formular.
+              </p>
+              <p><strong>Telefon:</strong> (Telefonnummer ergänzen)</p>
+              <p><strong>E-Mail:</strong> (E-Mail-Adresse ergänzen)</p>
+              <p><strong>Instagram:</strong> (Instagram ergänzen)</p>
+              <p><strong>Verfügbarkeit:</strong> Wochenendveranstaltungsservice – Freitag bis Sonntag</p>
+            </div>
+
+            <div class="card">
+              <form>
+                <div class="form-grid">
+                  <input type="text" placeholder="Name">
+                  <input type="email" placeholder="E-Mail">
+                  <input type="text" placeholder="Telefon">
+                  <input type="text" placeholder="Datum der Veranstaltung">
+                  <input type="text" placeholder="Standort / Ort">
+                  <input type="text" placeholder="Anzahl der Gäste">
+                  <input type="text" placeholder="Art des Events">
+                  <input type="text" placeholder="Budget für das Event">
+                </div>
+
+                <textarea placeholder="Getränkewünsche, besondere Hinweise, Empfehlungen von uns gewünscht, gewünschte Pakete, Musik / Zusatzleistungen usw."></textarea>
+
+                <div class="consent">
+                  <input type="checkbox">
+                  <div>Ich stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu.</div>
+                </div>
+
+                <div style="margin-top:16px;">
+                  <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">Anfrage absenden</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section id="galerie" class="section">
+          <div class="card">
+            <div class="small-label">Galerie & Socials</div>
+            <h2>Bildergalerie und Instagram später direkt einbindbar.</h2>
+            <div class="grid-3" style="margin-top:24px;">
+              <div class="gallery-placeholder">(Bild 1 ergänzen)</div>
+              <div class="gallery-placeholder">(Bild 2 ergänzen)</div>
+              <div class="gallery-placeholder">(Bild 3 ergänzen)</div>
+            </div>
+            <div class="download-box">Platzhalter für Instagram-Feed oder Social-Media-Verlinkung.</div>
+          </div>
+        </section>
+
+        <section id="faq" class="section">
+          <div class="soft-card">
+            <div class="small-label">FAQ</div>
+            <h2>Häufige Fragen</h2>
+
+            <div style="display:grid; gap:16px; margin-top:24px;">
+              <div class="faq-item">
+                <strong>Für welche Events seid ihr buchbar?</strong>
+                <p>Für Hochzeiten, Firmenfeiern, Hauspartys, Geburtstage, Märkte, Stadtfeste und weitere Veranstaltungen in Berlin und Umgebung.</p>
+              </div>
+              <div class="faq-item">
+                <strong>Seid ihr unter der Woche verfügbar?</strong>
+                <p>Unser Fokus liegt aktuell auf Wochenendveranstaltungen von Freitag bis Sonntag.</p>
+              </div>
+              <div class="faq-item">
+                <strong>Kann man die Pakete anpassen?</strong>
+                <p>Ja. Alle Pakete sind flexibel und können an Gästezahl, Getränkewünsche und Ablauf angepasst werden.</p>
+              </div>
+              <div class="faq-item">
+                <strong>Bietet ihr auch Bierwagen oder Ausschanklösungen?</strong>
+                <p>Ja, je nach Eventgröße und Standort können wir Bierwagen oder passende Ausschanklösungen einplanen.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-grid">
+          <div>
+            <div style="font-size:20px; font-weight:700;">(Firmenname ergänzen)</div>
+            <div>Getränke-Catering · Bierwagen · Wochenendveranstaltungsservice</div>
+          </div>
+          <div>
+            <div><strong>Impressum:</strong> Leon Gill & Josi Eilenberger</div>
+            <div><strong>Anschrift:</strong> (Anschrift ergänzen)</div>
+            <div><strong>USt-IdNr.:</strong> (ergänzen, sobald vorhanden)</div>
+          </div>
+          <div>
+            Datenschutz, Impressum, Jugendschutz- und Alkoholhinweise können im nächsten Schritt final ergänzt werden.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
